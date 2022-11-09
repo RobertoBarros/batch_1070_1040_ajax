@@ -1,3 +1,6 @@
+///////////////////////////
+// FETCH GET
+//////////////////////////
 const results = document.querySelector('#results')
 const form = document.querySelector('#search-form')
 const search = document.querySelector('#search-input')
@@ -28,12 +31,18 @@ form.addEventListener('submit', (event) => {
   searchMovies(search.value)
 })
 
+
+
+///////////////////////////
+// FETCH POST
+///////////////////////////
+
 const signUp = (email, password) => {
   const url = "https://reqres.in/api/login"
   fetch(url, {
     method: 'POST',
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({'email': email, 'password': password})
+    body: JSON.stringify( {'email': email, 'password': password} )
   })
     .then( response => response.json() )
     .then( (data) => {
